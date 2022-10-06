@@ -1,0 +1,15 @@
+.nav-content {
+    height: 4rem;
+    background-color: var(--secondary-color);
+    .nav-content_list {
+        display: flex;
+        a {
+            font-size: 1.4rem;
+            color: var(--text-color);
+            i {
+                font-size: 2rem;
+                padding-right: .5rem;
+            }
+        }
+    }
+}
