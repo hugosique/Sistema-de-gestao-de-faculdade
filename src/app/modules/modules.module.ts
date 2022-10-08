@@ -9,12 +9,15 @@ import { CoursesComponent } from './courses/courses.component';
 import { ClassesComponent } from './classes/classes.component';
 import { TeachersPageComponent } from './teachers-page/teachers-page.component';
 import { StudentsComponent } from './students/students.component';
+import { CoursesFormComponent } from './courses/courses-form/courses-form.component';
 
 //Material
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
-import { CoursesFormComponent } from './courses/courses-form/courses-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { CoursesFormComponent } from './courses/courses-form/courses-form.compon
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class ModulesModule { }

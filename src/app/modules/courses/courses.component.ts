@@ -12,8 +12,6 @@ export class CoursesComponent implements OnInit {
   public courses!: any[];
   public displayedColumns = ['name', 'idade'];
 
-
-
   constructor(
     private router: Router,
   ) { }

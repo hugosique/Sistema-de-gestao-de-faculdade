@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 html, body { height: 100%; box-sizing: border-box; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: var(--text-color);}
 
@@ -6,4 +7,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
     --primary-color: #0c0a3e;
     --secondary-color: #0a81d1;
     --text-color: #eff1f3
+}
+
+.col-3 {
+    width: 25%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-12 {
+    width: 100%;
 }

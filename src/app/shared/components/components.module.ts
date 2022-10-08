@@ -21,7 +21,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   imports: [
     CommonModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
   ]
 })
 export class ComponentsModule { }
