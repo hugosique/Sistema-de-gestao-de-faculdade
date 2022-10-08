@@ -1,3 +1,5 @@
+import { ICourse } from './../../models/models.model';
+import { GeneralService } from './../../services/general.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,24 +11,20 @@ import { Router } from '@angular/router';
 })
 export class CoursesComponent implements OnInit {
 
-  public courses!: any[];
-  public displayedColumns = ['name', 'idade'];
+  public courses!: ICourse[];
+  public displayedColumns = ['name', 'semesters'];
 
   constructor(
     private router: Router,
+    private generalService: GeneralService,
   ) { }
 
   ngOnInit(): void {
-    this.courses = [
-      {
-        name: 'hugo',
-        idade: 18,
-      },
-      {
-        name: 'Liviao',
-        idade: 18,
-      },
-    ]
+    this.getCourses();
+  }
+
+  getCourses() {
+    this.courses = this.generalService.getCourses()
   }
 
   navigateToCoursesForm() {

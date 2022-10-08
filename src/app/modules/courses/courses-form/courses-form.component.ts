@@ -1,6 +1,8 @@
+import { GeneralService } from './../../../services/general.service';
+import { ICourse } from './../../../models/models.model';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-form',
@@ -9,13 +11,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CoursesFormComponent implements OnInit {
   public courseId = this.activatedRoute.snapshot.paramMap.get('id') || '';
+  public courses!: ICourse[];
 
-  public courses!: any[];
   public coursesForm!: FormGroup;
+  public formSubmited: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
+    private generalService: GeneralService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -27,11 +32,21 @@ export class CoursesFormComponent implements OnInit {
       id: [null],
       name: [null],
       semesters: [null],
-      classes: this.fb.array([]),
     })
   }
 
-  teste() {
-    console.log(this.coursesForm.value.name)
+  submitForm() {
+    this.formSubmited = !this.coursesForm.valid
+
+    if (!this.coursesForm.valid) return
+
+    this.coursesForm.get('id')?.setValue(Math.floor(Date.now() * Math.random()).toString(36))
+
+    const body = this.coursesForm.getRawValue()
+
+    this.generalService.createCourse(body)
+
+    this.router.navigate(['cursos'])
+
   }
 }
