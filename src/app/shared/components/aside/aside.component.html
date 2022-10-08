@@ -1,28 +1,14 @@
 <div class="nav-content">
     <mat-nav-list class="nav-content_list">
-        <a mat-list-item>
+        <a 
+            mat-list-item
+            *ngFor="let aside of asideSelectItems"
+            routerLink="{{ aside.route }}"
+        >
             <i class="material-icons">
-                home
+                {{ aside.icon }}
             </i>
-            Cursos
-        </a>
-        <a mat-list-item>
-            <i class="material-icons">
-                home
-            </i>
-            Disciplinas
-        </a>
-        <a mat-list-item>
-            <i class="material-icons">
-                home
-            </i>
-            Professores
-        </a>
-        <a mat-list-item>
-            <i class="material-icons">
-                home
-            </i>
-            Alunos
+            {{ aside.title }}
         </a>
     </mat-nav-list>
 </div>

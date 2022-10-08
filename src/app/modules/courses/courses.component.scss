@@ -1,5 +1,47 @@
-* {
-    border: solid 10px red;
-    padding: 0;
-    margin: 0;
+::ng-deep {
+    .mat-raised-button {
+        background: var(--secondary-color);
+        color: var(--text-color);
+    }
+}
+
+.courses-content {
+    margin: 1.5rem;
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        span {
+            font-size: 1rem;
+            font-weight: 300;
+            margin: .8rem 0 ;
+        }
+        .card-content_button {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                width: 8rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .table-content {
+        margin-top: 1rem;
+        background-color: #fff;
+        h2 {
+            margin: 0;
+            padding-top: 1rem;
+            margin-left: 1rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        table {
+            width: 100%;
+        }
+    }
 }

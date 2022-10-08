@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-courses',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor() { }
+  public courses!: any[];
+  public displayedColumns = ['name', 'idade'];
+
+
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.courses = [
+      {
+        name: 'hugo',
+        idade: 18,
+      },
+      {
+        name: 'Liviao',
+        idade: 18,
+      },
+    ]
   }
 
+  navigateToCoursesForm() {
+    this.router.navigate(['cursos/novo'])
+  }
+  
 }

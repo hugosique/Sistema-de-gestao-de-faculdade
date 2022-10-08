@@ -1,15 +1,31 @@
 .nav-content {
     height: 4rem;
     background-color: var(--secondary-color);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     .nav-content_list {
         display: flex;
         a {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+            font-weight: 500;
             color: var(--text-color);
             i {
-                font-size: 2rem;
+                font-size: 1.4rem;
                 padding-right: .5rem;
             }
         }
+    }
+}
+
+::ng-deep {
+    .mat-ripple {
+        border-radius: 2rem;
+    }
+    .mat-list-item {
+        border-radius: 2rem;
+    }
+    .mat-list-item-content {
+        display: flex;
+        justify-content: center;
     }
 }
