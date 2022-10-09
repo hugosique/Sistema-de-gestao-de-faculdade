@@ -8,11 +8,14 @@ import { AsideComponent } from './aside/aside.component';
 //Material
 import { MatListModule } from '@angular/material/list'
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     AsideComponent,
+    DeleteDialogComponent,
   ],
   exports: [
     HeaderComponent,
@@ -22,6 +25,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     CommonModule,
     MatListModule,
     AppRoutingModule,
+    MatButtonModule,
   ]
 })
 export class ComponentsModule { }
