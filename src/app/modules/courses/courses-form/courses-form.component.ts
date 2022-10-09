@@ -1,3 +1,4 @@
+import { MessagesService } from './../../../services/messages.service';
 import { GeneralService } from './../../../services/general.service';
 import { ICourse } from './../../../models/models.model';
 import { Component, OnInit } from '@angular/core';
@@ -22,6 +23,7 @@ export class CoursesFormComponent implements OnInit {
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private generalService: GeneralService,
+    private messagesService: MessagesService,
     private router: Router,
   ) { }
 
@@ -62,6 +64,7 @@ export class CoursesFormComponent implements OnInit {
       const bodyCreate = this.coursesForm.getRawValue()
 
       this.generalService.createCourse(bodyCreate)
+      this.messagesService.showMessage('Curso cadastrado com sucesso!', false)
 
     } else {
       const bodyUpdate = {

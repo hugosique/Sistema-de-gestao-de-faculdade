@@ -18,3 +18,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
 .col-12 {
     width: 98%;
 }
+
+//Message Service aspect
+.msg-success {
+    background-color: #fff;
+    color: var(--secondary-color);
+    .mat-button-wrapper {
+        color: var(--secondary-color);
+    }
+}
+
+.msg-error {
+    background-color: red;
+    color: var(--text-color);
+    .mat-button-wrapper {
+        color: var(--text-color);
+    }
+}
