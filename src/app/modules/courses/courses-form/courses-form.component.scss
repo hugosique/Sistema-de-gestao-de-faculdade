@@ -19,6 +19,27 @@
             flex-direction: row;
             align-items: center;
             margin-top: 1rem;
+            .courses-form_row-classes {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .courses-form_no-class-message {
+                display: flex;
+                width: 100%;
+                
+                .no-class-message {
+                    color: red;
+                    border: none;
+                    text-transform: none;
+                    font-size: .7rem;
+                    font-weight: 500;
+                    a {
+                        color: var(--secondary-color);
+                        font-weight: 500;
+                        cursor: pointer;
+                    }
+                }
+            }
             span {
                 margin-left: .5rem;
                 color: #c8c8c8;
@@ -64,6 +85,22 @@
                     font-weight: 400;
                 }
                 input {
+                    min-width: 6rem;
+                    background: none;
+                    border: none;
+                    outline: 0;
+                    height: 2rem;
+                    border: solid 2px #c8c8c8;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    padding: 0;
+                    padding-left: 10px;
+                }
+                input:focus {
+                    border: solid 2px var(--secondary-color);
+                    transition: .5s;
+                }
+                                input {
                     min-width: 6rem;
                     background: none;
                     border: none;

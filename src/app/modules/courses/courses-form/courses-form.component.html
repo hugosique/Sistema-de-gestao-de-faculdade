@@ -42,38 +42,46 @@
 
             <div class="courses-form_row" [formGroup]="classCourseForm">
                 <span>Disciplinas</span>
-                <div class="field col-6">
-                    <label>Disciplina: </label>
-                    <input 
-                        type="text"
-                        placeholder="Selecione..."
-                        aria-label="Number"
-                        matInput
-                        [matAutocomplete]="auto"
-                        formControlName="class"
-                        >
-                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-                        <mat-option *ngFor="let class of classesToChoose" [value]="class">
-                          {{ class.className }}
-                        </mat-option>
-                    </mat-autocomplete>
-                </div>
 
-                <div class="field col-3">
-                    <label for="classSemester">Nº do semestre: </label>
-                    <input 
-                        type="number" 
-                        formControlName="classSemester"
-                        autocomplete="off"
-                    >
+                <div class="courses-form_row-classes" *ngIf="classesToChoose.length">
+                    <div class="field col-6">
+                        <label>Disciplina: </label>
+                        <input 
+                            type="text"
+                            placeholder="Selecione..."
+                            aria-label="Number"
+                            matInput
+                            [matAutocomplete]="auto"
+                            formControlName="class"
+                            >
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                            <mat-option *ngFor="let class of classesToChoose" [value]="class">
+                              {{ class.className }}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </div>
+    
+                    <div class="field col-3">
+                        <label for="classSemester">Nº do semestre: </label>
+                        <input 
+                            type="number" 
+                            formControlName="classSemester"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="field col-1">
+                        <br>
+                        <button mat-raised-button color="primary" (click)="addClass()" class="addClassBtn">
+                            <i class="material-icons">
+                                add
+                            </i>
+                        </button>
+                    </div>
                 </div>
-                <div class="field col-1">
-                    <br>
-                    <button mat-raised-button color="primary" (click)="addClass()" class="addClassBtn">
-                        <i class="material-icons">
-                            add
-                        </i>
-                    </button>
+                <div class="courses-form_no-class-message" *ngIf="!classesToChoose.length">
+                    <span class="no-class-message">
+                        Não há disciplinas cadastradas no momento. Para cadastrar uma nova acesse o menu <strong>"Disciplinas"</strong>! 
+                    </span>
                 </div>
             </div>
 

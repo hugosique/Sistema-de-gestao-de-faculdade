@@ -21,7 +21,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class TeachersPageComponent implements OnInit {
   public teachers!: ITeacher[];
-  public displayedColumns = ['name', 'semesters', 'coordinator', 'action'];
+  public displayedColumns = ['teacherName', 'birthDate', 'remuneration', 'action'];
 
   constructor(
     private router: Router,

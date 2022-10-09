@@ -55,49 +55,6 @@ export class CoursesFormComponent implements OnInit {
     })
   }
 
-  createClassCourseForm() {
-    this.classCourseForm = this.fb.group({
-      class: [null],
-      classSemester: [null],
-    })
-  }
-
-  addClass() {
-    if(this.classCourseForm.get('class')?.value == null ||
-    typeof(this.classCourseForm.get('class')?.value) == typeof('')) {
-      this.messagesService.showMessage('Preencha uma disciplina válida', true)
-      return
-    }
-
-    if(this.classCourseForm.get('classSemester')?.value > this.coursesForm.get('semesters')?.value || 
-    this.classCourseForm.get('classSemester')?.value == 0) {
-      this.messagesService.showMessage('O semestre preenchido não existe no curso', true)
-      return
-    }
-
-    this.selectedClasses.push({
-      ...this.classCourseForm.get('class')?.value,
-      semester: this.classCourseForm.get('classSemester')?.value
-    })
-
-    this.updateClassOnCourseForm(this.selectedClasses)
-
-    this.classCourseForm.reset()
-
-  }
-
-  updateClassOnCourseForm(selectedClasses: IClasses[]) {
-    const coursesForm = this.coursesForm.controls['classes'] as FormArray;
-
-    selectedClasses.forEach((element => {
-      coursesForm.push(
-        this.fb.group({
-          ...element
-        })
-      )
-    }))
-  }
-  
   getCourse(id: string) {
     this.editCourse = this.coursesService.getCourseById(id)
     this.coursesForm.patchValue({
@@ -108,14 +65,9 @@ export class CoursesFormComponent implements OnInit {
       this.selectedClasses = this.coursesForm.get('classes')?.value
     }
   }
-  // Get other data
-
-  getClasses() {
-    this.classesToChoose = this.classesService.getClasses()
-  }
-
+  
   // Form
-
+  
   cancelForm() {
     this.router.navigate(['cursos'])
   }
@@ -141,13 +93,64 @@ export class CoursesFormComponent implements OnInit {
       }
       this.coursesService.updateCourse(this.courseId, bodyUpdate) 
     }
-      !this.courseId ? this.messagesService.showMessage('Curso cadastrado com sucesso!', false) :
-      this.messagesService.showMessage('Curso atualizado com sucesso!', false)
-
-      this.router.navigate(['cursos'])
+    !this.courseId ? this.messagesService.showMessage('Curso cadastrado com sucesso!', false) :
+    this.messagesService.showMessage('Curso atualizado com sucesso!', false)
+    
+    this.router.navigate(['cursos'])
   }
-
+  
+  //Methods (only on courses form)
+  
   displayFn(subject: any) {
     return subject ? subject.className : undefined
   }
+  
+  // Get other data
+  
+  getClasses() {
+    this.classesToChoose = this.classesService.getClasses()
+  }
+
+  updateClassOnCourseForm(selectedClasses: IClasses[]) {
+    const coursesForm = this.coursesForm.controls['classes'] as FormArray;
+  
+    selectedClasses.forEach((element => {
+      coursesForm.push(
+        this.fb.group({
+          ...element
+        })
+      )
+    }))
+  }
+
+  addClass() {
+    if(this.classCourseForm.get('class')?.value == null ||
+    typeof(this.classCourseForm.get('class')?.value) == typeof('')) {
+      this.messagesService.showMessage('Preencha uma disciplina válida', true)
+      return
+    }
+
+    if(this.classCourseForm.get('classSemester')?.value > this.coursesForm.get('semesters')?.value || 
+    this.classCourseForm.get('classSemester')?.value == 0 || this.classCourseForm.get('classSemester')?.value == null) {
+      this.messagesService.showMessage('O semestre preenchido não existe no curso', true)
+      return
+    }
+
+    this.selectedClasses.push({
+      ...this.classCourseForm.get('class')?.value,
+      semester: this.classCourseForm.get('classSemester')?.value
+    })
+
+    this.updateClassOnCourseForm(this.selectedClasses)
+
+    this.classCourseForm.reset()
+  }
+
+  createClassCourseForm() {
+    this.classCourseForm = this.fb.group({
+      class: [null],
+      classSemester: [null],
+    })
+  }
+  
 }

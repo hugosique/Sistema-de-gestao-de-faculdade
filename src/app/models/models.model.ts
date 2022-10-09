@@ -21,7 +21,6 @@ export interface ITeacher {
     teacherName: string,
     birthDate: Date,
     remuneration: number,
-    occupationArea: string,
 }
 
 export interface iStudent {
