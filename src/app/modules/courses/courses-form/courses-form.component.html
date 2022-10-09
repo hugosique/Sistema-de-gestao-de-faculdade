@@ -40,6 +40,73 @@
                 </div>
             </div>
 
+            <div class="courses-form_row" [formGroup]="classCourseForm">
+                <span>Disciplinas</span>
+                <div class="field col-6">
+                    <label>Disciplina: </label>
+                    <input 
+                        type="text"
+                        placeholder="Selecione..."
+                        aria-label="Number"
+                        matInput
+                        [matAutocomplete]="auto"
+                        formControlName="class"
+                        >
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let class of classesToChoose" [value]="class">
+                          {{ class.className }}
+                        </mat-option>
+                    </mat-autocomplete>
+                </div>
+
+                <div class="field col-3">
+                    <label for="classSemester">Nº do semestre: </label>
+                    <input 
+                        type="number" 
+                        formControlName="classSemester"
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="field col-1">
+                    <br>
+                    <button mat-raised-button color="primary" (click)="addClass()" class="addClassBtn">
+                        <i class="material-icons">
+                            add
+                        </i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="courses-form_row" *ngIf="selectedClasses.length">
+                <div class="col-12 classes-list">
+                    <table class="classes-list_table">
+                        <thead>
+                            <th>Disciplina</th>
+                            <th>Semestre do curso</th>
+                            <th>Professor</th>
+                            <th></th>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let class of selectedClasses; let i = index">
+                                <td>{{ class.className }}</td>
+                                <td>{{ class.semester }}</td>
+                                <td>{{ class.teacher }}</td>
+                                <td>
+                                    <a
+                                        matTooltip="Remover"
+                                        matTooltipPosition="above">
+                                        <i class="material-icons">
+                                            cancel
+                                        </i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
         </form>
 
         <div class="card-footer">
