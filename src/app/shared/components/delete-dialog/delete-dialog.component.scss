@@ -1,0 +1,12 @@
+.dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    .cancel-btn {
+        background-color: #fff;
+        color: #000;
+    }
+
+    button {
+        margin-left: 1rem;
+    }
+}
