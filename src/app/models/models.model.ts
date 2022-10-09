@@ -3,6 +3,7 @@ export interface ICourse {
     name: string,
     semesters: number,
     coordinator?: string,
+    classes?: IClasses[]
 }
 
 export interface IClasses {
@@ -12,6 +13,7 @@ export interface IClasses {
     description?: string,
     workload: number,
     students?: string[],
+    semester?: number,
 }
 
 export interface ITeacher {

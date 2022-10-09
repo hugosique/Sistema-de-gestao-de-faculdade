@@ -10,6 +10,9 @@ import { ClassesComponent } from './classes/classes.component';
 import { TeachersPageComponent } from './teachers-page/teachers-page.component';
 import { StudentsComponent } from './students/students.component';
 import { CoursesFormComponent } from './courses/courses-form/courses-form.component';
+import { ClassesFormComponent } from './classes/classes-form/classes-form.component';
+import { TeachersFormComponent } from './teachers-page/teachers-form/teachers-form.component';
+import { StudentsFormComponent } from './students/students-form/students-form.component';
 
 //Material
 import { MatButtonModule } from '@angular/material/button';
@@ -19,9 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ClassesFormComponent } from './classes/classes-form/classes-form.component';
-import { TeachersFormComponent } from './teachers-page/teachers-form/teachers-form.component';
-import { StudentsFormComponent } from './students/students-form/students-form.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { StudentsFormComponent } from './students/students-form/students-form.co
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatTooltipModule
   ]
 })
 export class ModulesModule { }

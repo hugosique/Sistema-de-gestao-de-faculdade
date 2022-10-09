@@ -9,11 +9,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
     --text-color: #eff1f3
 }
 
+.col-1 {
+    width: 7.6%;
+}
+.col-2 {
+    width: 15%;
+}
 .col-3 {
     width: 23%;
 }
+.col-4 {
+    width: 30%;
+}
 .col-6 {
     width: 47%;
+}
+.col-8 {
+    width: 60%;
+}
+.col-8 {
+    width: 60%;
+}
+.col-9 {
+    width: 72%;
+}
+.col-10 {
+    width: 83%;
 }
 .col-12 {
     width: 98%;
