@@ -42,8 +42,35 @@
             }
         }
     }
+
+    .card-footer {
+        margin-top: 1rem;
+        border-top: solid 2px #c8c8c8;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            margin: 1rem 0 0 1rem;
+        }
+        .card-footer_cancel-btn {
+            background-color: #fff;
+            color: #000
+        }
+        .card-footer_send-btn {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            text-transform: uppercase;
+        }
+    }
 }
 
+::ng-deep {
+    .card-footer {
+        .card-footer_send-btn {
+            background: var(--secondary-color);
+            color: var(--text-color);
+        }
+    }
+}
 
 // Remove Buttons from input:number
 input::-webkit-outer-spin-button,

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class CoursesComponent implements OnInit {
 
   public courses!: ICourse[];
-  public displayedColumns = ['name', 'semesters'];
+  public displayedColumns = ['name', 'semesters', 'coordinator', 'action'];
 
   constructor(
     private router: Router,
@@ -25,6 +25,14 @@ export class CoursesComponent implements OnInit {
 
   getCourses() {
     this.courses = this.generalService.getCourses()
+  }
+  
+  editCourse(id: string) {
+    this.router.navigate([`cursos/editar/${id}`])
+  }
+
+  removeCourse(id: string) {
+    this.generalService.deleteCourse(id)
   }
 
   navigateToCoursesForm() {

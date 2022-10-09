@@ -8,32 +8,11 @@
 .courses-content {
     margin: 1.5rem;
     .card-content {
-        display: flex;
-        flex-direction: column;
-        h2 {
-            margin: 0;
-            font-size: 1.4rem;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
-        span {
-            font-size: 1rem;
-            font-weight: 300;
-            margin: .8rem 0 ;
-        }
-        .card-content_button {
-            display: flex;
-            justify-content: flex-end;
-            button {
-                width: 8rem;
-                font-size: 1rem;
-            }
-        }
-    }
-
-    .table-content {
         margin-top: 1rem;
         background-color: #fff;
+        display: flex;
+        flex-direction: column;
+
         h2 {
             margin: 0;
             padding-top: 1rem;
@@ -42,6 +21,25 @@
             font-weight: 400;
             text-transform: uppercase;
         }
+        span {
+            font-size: 1rem;
+            font-weight: 300;
+            margin: .8rem 1rem ;;
+        }
+        .card-content_button {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            button {
+                min-width: 8rem;
+                font-size: 1rem;
+                margin-right: 1rem;
+                height: 2.5rem;
+            }
+        }
+    }
+    .table-content {
+        margin-top: 1.5rem;
         table {
             width: 100%;
         }
@@ -50,6 +48,19 @@
         }
         td {
             font-size: 1rem;
+        }
+        .edit {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .delete {
+            cursor: pointer;
+        }
+        .edit > i {
+            color: var(--secondary-color);
+        }
+        .delete > i {
+            color: #ff0000;
         }
     }
 }

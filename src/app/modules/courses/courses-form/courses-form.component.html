@@ -27,10 +27,26 @@
                     >
             </div>
 
-            <button (click)="submitForm()">
-                Click me!
-            </button>
+            <div class="field col-3">
+                <label for="coordinator">Coordenador: </label>
+                <input 
+                    type="text" 
+                    id="coordinator"
+                    formControlName="coordinator"
+                    autocomplete="off"
+                    >
+            </div>
 
         </form>
+
+        <div class="card-footer">
+            <button mat-raised-button (click)="cancelForm()" color="secondary" class="card-footer_cancel-btn">
+                Cancelar
+            </button>
+
+            <button mat-raised-button (click)="submitForm()" class="card-footer_send-btn">
+                {{ courseId ? 'Atualizar' : 'Cadastrar'}}
+            </button>
+        </div>
     </mat-card>
 </div>
