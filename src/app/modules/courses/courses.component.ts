@@ -1,7 +1,7 @@
 import { DeleteDialogComponent } from './../../shared/components/delete-dialog/delete-dialog.component';
 import { MessagesService } from './../../services/messages.service';
 import { ICourse } from './../../models/models.model';
-import { GeneralService } from './../../services/general.service';
+import { CoursesService } from '../../services/courses.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private generalService: GeneralService,
+    private generalService: CoursesService,
     private messagesService: MessagesService,
     public dialog: MatDialog,
   ) { }
