@@ -22,7 +22,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ClassesComponent implements OnInit {
 
   public classes!: IClasses[];
-  public displayedColumns = ['name', 'semesters', 'coordinator', 'action'];
+  public displayedColumns = ['className', 'teacher', 'description', 'workload', 'action'];
 
   constructor(
     private router: Router,

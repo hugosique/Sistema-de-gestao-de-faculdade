@@ -1,1 +1,71 @@
-<p>classes-form works!</p>
+<div class="classes-form-content">
+    <mat-card 
+        class="card-content mat-elevation-z4"
+        >
+        <h2>
+            {{ classId ? 'Editar' : 'Nova'}} disciplina
+        </h2>
+
+        <form class="classes-form" [formGroup]="classesForm">
+            <div class="classes-form_row">
+                <div class="field col-3">
+                    <label for="className">Nome da disciplina: </label>
+                    <input 
+                        type="text" 
+                        id="className"
+                        formControlName="className"
+                        autocomplete="off"
+                        >
+                </div>
+    
+                <div class="field col-3">
+                    <label for="teacher">Professor: </label>
+                    <input 
+                        type="text"
+                        id="teacher"
+                        formControlName="teacher"
+                        autocomplete="off"
+                        >
+                </div>
+    
+                <div class="field col-3">
+                    <label for="workload">Carga horária: </label>
+                    <input 
+                        type="number"
+                        id="workload"
+                        formControlName="workload"
+                        autocomplete="off"
+                        >
+                </div>
+            </div>
+
+            <div class="classes-form_row">
+                <div class="field col-12">
+                    <label for="description">Descrição: </label>
+                    <textarea
+                        name="description" 
+                        id="description"
+                        formControlName="description"
+                        autocomplete="off"
+                        cols="30" 
+                        rows="2"
+                        maxlength="180"
+                        >
+                    </textarea>
+    
+                </div>
+            </div>
+
+        </form>
+
+        <div class="card-footer">
+            <button mat-raised-button (click)="cancelForm()" color="secondary" class="card-footer_cancel-btn">
+                Cancelar
+            </button>
+
+            <button mat-raised-button (click)="submitForm()" class="card-footer_send-btn">
+                {{ classId ? 'Atualizar' : 'Cadastrar'}}
+            </button>
+        </div>
+    </mat-card>
+</div>

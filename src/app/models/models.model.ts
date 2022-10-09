@@ -17,13 +17,17 @@ export interface IClasses {
 export interface ITeacher {
     id?: string,
     teacherName: string,
+    birthDate: Date,
+    remuneration: number,
     occupationArea: string,
 }
 
 export interface iStudent {
     id?: string,
     studantName: string,
-    studantAge: number
+    birthDate: Date,
+    registration: number,
     class: string,
     currentSemester: number,
+    classGrades: any[],
 }

@@ -7,34 +7,37 @@
         </h2>
 
         <form class="courses-form" [formGroup]="coursesForm">
-            <div class="field col-3">
-                <label for="name">Nome: </label>
-                <input 
-                    type="text" 
-                    id="name"
-                    formControlName="name"
-                    autocomplete="off"
-                    >
-            </div>
-
-            <div class="field col-3">
-                <label for="name">Nº de semestres: </label>
-                <input 
-                    type="number" 
-                    id="name"
-                    formControlName="semesters"
-                    autocomplete="off"
-                    >
-            </div>
-
-            <div class="field col-3">
-                <label for="coordinator">Coordenador: </label>
-                <input 
-                    type="text" 
-                    id="coordinator"
-                    formControlName="coordinator"
-                    autocomplete="off"
-                    >
+            <div class="courses-form_row">
+                <div class="field col-3">
+                    <label for="name">Nome: </label>
+                    <input 
+                        type="text" 
+                        id="name"
+                        formControlName="name"
+                        autocomplete="off"
+                        >
+                </div>
+    
+                <div class="field col-3">
+                    <label for="semesters">Nº de semestres: </label>
+                    <input 
+                        type="number" 
+                        id="semesters"
+                        max="10"
+                        formControlName="semesters"
+                        autocomplete="off"
+                        >
+                </div>
+    
+                <div class="field col-3">
+                    <label for="coordinator">Coordenador: </label>
+                    <input 
+                        type="text" 
+                        id="coordinator"
+                        formControlName="coordinator"
+                        autocomplete="off"
+                        >
+                </div>
             </div>
 
         </form>

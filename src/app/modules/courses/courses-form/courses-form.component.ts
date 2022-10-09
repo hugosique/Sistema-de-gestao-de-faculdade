@@ -22,7 +22,7 @@ export class CoursesFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private generalService: CoursesService,
+    private coursesService: CoursesService,
     private messagesService: MessagesService,
     private router: Router,
   ) { }
@@ -45,7 +45,7 @@ export class CoursesFormComponent implements OnInit {
   }
 
   getCourse(id: string) {
-    this.editCourse = this.generalService.getCourseById(id)
+    this.editCourse = this.coursesService.getCourseById(id)
     this.coursesForm.patchValue({
       ...this.editCourse,
     })
@@ -63,7 +63,7 @@ export class CoursesFormComponent implements OnInit {
       this.coursesForm.get('id')?.setValue(Math.floor(Date.now() * Math.random()).toString(36))
       const bodyCreate = this.coursesForm.getRawValue()
 
-      this.generalService.createCourse(bodyCreate)
+      this.coursesService.createCourse(bodyCreate)
       this.messagesService.showMessage('Curso cadastrado com sucesso!', false)
 
     } else {
@@ -74,7 +74,7 @@ export class CoursesFormComponent implements OnInit {
         semesters: this.coursesForm.get('semesters')?.value,
       }
 
-      this.generalService.updateCourse(this.courseId, bodyUpdate)
+      this.coursesService.updateCourse(this.courseId, bodyUpdate)
     }
     
     this.router.navigate(['cursos'])
