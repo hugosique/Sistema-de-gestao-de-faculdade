@@ -1,14 +1,16 @@
-import { ICourse } from './../models/models.model';
+import { ICourse } from '../models/models.model';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GeneralService {
+export class CoursesService {
 
   private coursesDataService: ICourse[] = [];
 
   constructor() { }
+
+  // Courses Methods
 
   createCourse(course: ICourse) {
     localStorage.setItem('tbCourses', JSON.stringify(course))
@@ -37,4 +39,6 @@ export class GeneralService {
     let index = this.coursesDataService.findIndex(element => element.id === id)
     this.coursesDataService.splice(index, 1, course)
   }
+
+
 }

@@ -7,7 +7,23 @@ export interface ICourse {
 
 export interface IClasses {
     id?: string,
-    classeName: string,
+    className: string,
     teacher: string,
     description?: string,
+    workload: number,
+    students?: string[],
+}
+
+export interface ITeacher {
+    id?: string,
+    teacherName: string,
+    occupationArea: string,
+}
+
+export interface iStudent {
+    id?: string,
+    studantName: string,
+    studantAge: number
+    class: string,
+    currentSemester: number,
 }

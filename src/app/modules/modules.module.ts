@@ -19,6 +19,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ClassesFormComponent } from './classes/classes-form/classes-form.component';
+import { TeachersFormComponent } from './teachers-page/teachers-form/teachers-form.component';
+import { StudentsFormComponent } from './students/students-form/students-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     TeachersPageComponent,
     StudentsComponent,
     CoursesFormComponent,
+    ClassesFormComponent,
+    TeachersFormComponent,
+    StudentsFormComponent,
   ],
   imports: [
     CommonModule,

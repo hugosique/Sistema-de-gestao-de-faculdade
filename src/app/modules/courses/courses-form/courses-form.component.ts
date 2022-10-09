@@ -1,5 +1,5 @@
 import { MessagesService } from './../../../services/messages.service';
-import { GeneralService } from './../../../services/general.service';
+import { CoursesService } from '../../../services/courses.service';
 import { ICourse } from './../../../models/models.model';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
@@ -22,7 +22,7 @@ export class CoursesFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private generalService: GeneralService,
+    private generalService: CoursesService,
     private messagesService: MessagesService,
     private router: Router,
   ) { }

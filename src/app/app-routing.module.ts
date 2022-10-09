@@ -1,3 +1,6 @@
+import { StudentsFormComponent } from './modules/students/students-form/students-form.component';
+import { TeachersFormComponent } from './modules/teachers-page/teachers-form/teachers-form.component';
+import { ClassesFormComponent } from './modules/classes/classes-form/classes-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,6 +13,7 @@ import { CoursesFormComponent } from './modules/courses/courses-form/courses-for
 
 
 const routes: Routes = [
+  // Courses
   {
     path: 'cursos',
     component: CoursesComponent
@@ -22,18 +26,45 @@ const routes: Routes = [
     path: 'cursos/editar/:id',
     component: CoursesFormComponent
   },
+  // Classes
   {
     path: 'disciplinas',
     component: ClassesComponent
   },
   {
+    path: 'disciplinas/novo',
+    component: ClassesFormComponent
+  },
+  {
+    path: 'disciplinas/editar/:id',
+    component: ClassesFormComponent
+  },
+  // Teachers
+  {
     path: 'professores',
     component: TeachersPageComponent
   },
   {
+    path: 'professores/novo',
+    component: TeachersFormComponent
+  },
+  {
+    path: 'professores/editar/:id',
+    component: TeachersFormComponent
+  },
+  // Students
+  {
     path: 'alunos',
     component: StudentsComponent
-  }
+  },
+  {
+    path: 'alunos/novo',
+    component: StudentsFormComponent
+  },
+  {
+    path: 'alunos/editar/:id',
+    component: StudentsFormComponent
+  },
 ];
 
 @NgModule({
