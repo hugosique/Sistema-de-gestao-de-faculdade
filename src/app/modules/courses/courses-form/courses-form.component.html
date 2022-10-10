@@ -99,7 +99,7 @@
                             <tr *ngFor="let class of selectedClasses; let i = index">
                                 <td>{{ class.className }}</td>
                                 <td>{{ class.semester }}</td>
-                                <td>{{ class.teacher }}</td>
+                                <td>{{ class.teacher?.teacherName }}</td>
                                 <td>
                                     <a
                                         matTooltip="Remover"

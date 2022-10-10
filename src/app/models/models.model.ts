@@ -9,7 +9,7 @@ export interface ICourse {
 export interface IClasses {
     id?: string,
     className: string,
-    teacher: string,
+    teacher?: ITeacher,
     description?: string,
     workload: number,
     students?: string[],

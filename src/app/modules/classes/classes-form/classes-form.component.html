@@ -17,15 +17,22 @@
                         autocomplete="off"
                         >
                 </div>
-    
-                <div class="field col-3">
-                    <label for="teacher">Professor: </label>
+
+                <div class="field col-3" [formGroup]="teacherClassForm">
+                    <label>Professor: </label>
                     <input 
                         type="text"
-                        id="teacher"
-                        formControlName="teacher"
-                        autocomplete="off"
+                        placeholder="Selecione..."
+                        aria-label="Number"
+                        matInput
+                        [matAutocomplete]="auto"
+                        formControlName="teacherData"
                         >
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let teacher of teachersToChoose" [value]="teacher">
+                          {{ teacher.teacherName }}
+                        </mat-option>
+                    </mat-autocomplete>
                 </div>
     
                 <div class="field col-3">
