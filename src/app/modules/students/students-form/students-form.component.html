@@ -1,1 +1,66 @@
-<p>students-form works!</p>
+<div class="students-form-content">
+    <mat-card 
+        class="card-content mat-elevation-z4"
+        >
+        <h2>
+            {{ studentId ? 'Editar' : 'Novo'}} aluno
+        </h2>
+
+        <form class="students-form" [formGroup]="studentsForm">
+
+            <div class="students-form_row">
+                <div class="field col-6">
+                    <label for="studentName">Nome do aluno: </label>
+                    <input 
+                        type="text" 
+                        id="studentName"
+                        formControlName="studentName"
+                        autocomplete="off"
+                        >
+                </div>
+
+                <div class="field col-2">
+                    <label for="registration">Matrícula: </label>
+                    <input
+                        type="number" 
+                        id="registration"
+                        formControlName="registration"
+                        autocomplete="off"
+                        >
+                </div>
+
+                <div class="field col-2">
+                    <label for="birthDate">Data de nascimento: </label>
+                    <input
+                        type="date" 
+                        id="birthDate"
+                        formControlName="birthDate"
+                        autocomplete="off"
+                        >
+                </div>
+
+                <div class="field col-2">
+                    <label for="currentSemester">Semestre atual: </label>
+                    <input
+                        type="number" 
+                        id="registration"
+                        formControlName="registration"
+                        autocomplete="off"
+                        >
+                </div>  
+
+            </div>
+
+        </form>
+
+        <div class="card-footer">
+            <button mat-raised-button (click)="cancelForm()" color="secondary" class="card-footer_cancel-btn">
+                Cancelar
+            </button>
+
+            <button mat-raised-button (click)="submitForm()" class="card-footer_send-btn">
+                {{ studentId ? 'Atualizar' : 'Cadastrar'}}
+            </button>
+        </div>
+    </mat-card>
+</div>

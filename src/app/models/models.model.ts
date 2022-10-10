@@ -4,6 +4,7 @@ export interface ICourse {
     semesters: number,
     coordinator?: string,
     classes?: IClasses[]
+    students?: iStudent[],
 }
 
 export interface IClasses {
@@ -12,7 +13,6 @@ export interface IClasses {
     teacher?: ITeacher,
     description?: string,
     workload: number,
-    students?: string[],
     semester?: number,
 }
 
@@ -25,10 +25,9 @@ export interface ITeacher {
 
 export interface iStudent {
     id?: string,
-    studantName: string,
+    studentName: string,
     birthDate: Date,
     registration: number,
-    class: string,
     currentSemester: number,
-    classGrades: any[],
+    classGrades?: IClasses[],
 }

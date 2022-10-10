@@ -21,7 +21,7 @@ import { StudentsService } from 'src/app/services/students.service';
 })
 export class StudentsComponent implements OnInit {
   public students!: iStudent[];
-  public displayedColumns = ['name', 'semesters', 'coordinator', 'action'];
+  public displayedColumns = ['studentName', 'registration', 'birthDate', 'currentSemester', 'action'];
 
   constructor(
     private router: Router,
