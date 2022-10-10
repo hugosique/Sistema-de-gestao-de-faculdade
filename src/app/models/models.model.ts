@@ -29,5 +29,5 @@ export interface iStudent {
     birthDate: Date,
     registration: number,
     currentSemester: number,
-    classGrades?: IClasses[],
+    course?: ICourse,
 }

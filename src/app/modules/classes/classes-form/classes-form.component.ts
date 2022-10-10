@@ -19,11 +19,11 @@ export class ClassesFormComponent implements OnInit {
   public editClass!: IClasses | undefined;
 
   public classesForm!: FormGroup;
-  public teacherClassForm!: FormGroup;
   public formSubmited: boolean = false;
-
+  
   // other datas
   public teachersToChoose!: ITeacher[];
+  public teacherClassForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,

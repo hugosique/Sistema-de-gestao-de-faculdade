@@ -22,16 +22,23 @@ export class StudentsFormComponent implements OnInit {
   public studentsForm!: FormGroup;
   public formSubmited: boolean = false;
 
+  // other datas
+  public coursesToChoose!: ICourse[];
+  public courseStudentForm!: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private studentsService: StudentsService,
+    private coursesService: CoursesService,
     private messagesService: MessagesService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    this.createStudentsForm();
+    this.createStudentsForm()
+    this.createCoursesStudentForm()
+    this.getCourses()
 
     if(this.studentId) {
       this.getStudent(this.studentId)
@@ -45,7 +52,7 @@ export class StudentsFormComponent implements OnInit {
       birthDate: [null],
       registration: [null],
       currentSemester: [null],
-      classGrades: this.fb.array([])
+      course: [null],
     })
   }
 
@@ -61,6 +68,16 @@ export class StudentsFormComponent implements OnInit {
   }
 
   submitForm() {
+    if(this.courseStudentForm.get('courseData')?.value == null ||
+    typeof(this.courseStudentForm.get('courseData')?.value) == typeof('')) {
+
+      this.messagesService.showMessage('Preencha um curso da listagem', true)
+      return
+    }
+
+    this.studentsForm.get('course')?.
+    setValue(this.courseStudentForm.get('courseData')?.value)
+
     this.formSubmited = !this.studentsForm.valid
     if (!this.studentsForm.valid) return
 
@@ -79,8 +96,6 @@ export class StudentsFormComponent implements OnInit {
         classGrades: this.studentsForm.get('classGrades')?.value,
       }
 
-      console.log(bodyUpdate)
-
       this.studentsService.updateStudent(this.studentId, bodyUpdate)
     }
 
@@ -88,5 +103,19 @@ export class StudentsFormComponent implements OnInit {
     this.messagesService.showMessage('Aluno atualizado com sucesso!', false)
     
     this.router.navigate(['alunos'])
+  }
+
+  getCourses() {
+    this.coursesToChoose = this.coursesService.getCourses()
+  }
+
+  displayFn(subject: any) {
+    return subject ? subject.name : undefined
+  }
+
+  createCoursesStudentForm() {
+    this.courseStudentForm = this.fb.group({
+      courseData: [null],
+    })
   }
 }

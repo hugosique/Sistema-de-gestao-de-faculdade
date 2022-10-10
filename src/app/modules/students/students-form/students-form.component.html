@@ -51,6 +51,25 @@
 
             </div>
 
+            <div class="students-form_row" [formGroup]="courseStudentForm">
+                <div class="field col-3" >
+                    <label>Curso: </label>
+                    <input 
+                        type="text"
+                        placeholder="Selecione..."
+                        aria-label="Number"
+                        matInput
+                        [matAutocomplete]="auto"
+                        formControlName="courseData"
+                        >
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let course of coursesToChoose" [value]="course">
+                          {{ course.name }}
+                        </mat-option>
+                    </mat-autocomplete>
+                </div>
+            </div>
+
         </form>
 
         <div class="card-footer">
