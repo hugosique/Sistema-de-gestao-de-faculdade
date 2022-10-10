@@ -11,4 +11,20 @@
             {{ aside.title }}
         </a>
     </mat-nav-list>
+
+    <div class="menu-buttons">
+        <button mat-button [matMenuTriggerFor]="menu">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button
+                *ngFor="let aside of asideSelectItems"
+                (click)="changePage(aside.route)"
+                mat-menu-item>
+                {{ aside.title }}
+            </button>
+          </mat-menu>
+    </div>
 </div>

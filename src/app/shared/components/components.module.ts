@@ -10,6 +10,8 @@ import { MatListModule } from '@angular/material/list'
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     AppRoutingModule,
     MatButtonModule,
+    MatMenuModule,
   ]
 })
 export class ComponentsModule { }

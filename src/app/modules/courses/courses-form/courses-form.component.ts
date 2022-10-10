@@ -81,8 +81,6 @@ export class CoursesFormComponent implements OnInit {
       const bodyCreate = this.coursesForm.getRawValue()
       
       this.coursesService.createCourse(bodyCreate)
-      
-      
     } else {
       const bodyUpdate = {
         id: this.courseId,
@@ -91,6 +89,7 @@ export class CoursesFormComponent implements OnInit {
         semesters: this.coursesForm.get('semesters')?.value,
         classes: this.selectedClasses,
       }
+
       this.coursesService.updateCourse(this.courseId, bodyUpdate) 
     }
     !this.courseId ? this.messagesService.showMessage('Curso cadastrado com sucesso!', false) :
@@ -113,6 +112,8 @@ export class CoursesFormComponent implements OnInit {
 
   updateClassOnCourseForm(selectedClasses: IClasses[]) {
     const coursesForm = this.coursesForm.controls['classes'] as FormArray;
+
+    coursesForm.reset()
   
     selectedClasses.forEach((element => {
       coursesForm.push(
@@ -144,6 +145,12 @@ export class CoursesFormComponent implements OnInit {
     this.updateClassOnCourseForm(this.selectedClasses)
 
     this.classCourseForm.reset()
+  }
+
+  removeClass(index: number) {
+    this.selectedClasses.splice(index, 1)
+
+    this.updateClassOnCourseForm(this.selectedClasses)
   }
 
   createClassCourseForm() {

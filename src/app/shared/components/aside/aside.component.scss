@@ -15,6 +15,9 @@
             }
         }
     }
+    .menu-buttons {
+        display: none;
+    }
 }
 
 ::ng-deep {
@@ -27,5 +30,20 @@
     .mat-list-item-content {
         display: flex;
         justify-content: center;
+    }
+}
+
+@media(max-width: 570px ) {
+    .nav-content {
+        height: 3rem !important;
+    }
+    .nav-content_list {
+        display: none !important;
+    }
+    .menu-buttons {
+        display: flex !important;
+        justify-content: center;
+        margin: 0;
+        color: var(--text-color);
     }
 }

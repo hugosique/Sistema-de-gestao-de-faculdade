@@ -7,3 +7,9 @@ body {
         flex-direction: column;
     }
 }
+
+@media(max-width: 1022px) {
+    body {
+        margin: 0;
+    }
+}
