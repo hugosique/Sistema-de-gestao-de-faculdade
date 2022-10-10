@@ -1,0 +1,21 @@
+.main-content {
+    margin: 1.5rem;
+    .card {
+        margin-top: 1rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            padding: 0;
+            margin: 0;
+            text-transform: uppercase;
+            margin: 1rem;
+            border-bottom: solid 1px #c8c8c8;
+        }
+        span {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+    }
+}

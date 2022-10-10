@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ClassesFormComponent,
     TeachersFormComponent,
     StudentsFormComponent,
+    HomePageComponent,
   ],
   imports: [
     CommonModule,

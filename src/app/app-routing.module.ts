@@ -1,3 +1,4 @@
+import { HomePageComponent } from './modules/home-page/home-page.component';
 import { StudentsFormComponent } from './modules/students/students-form/students-form.component';
 import { TeachersFormComponent } from './modules/teachers-page/teachers-form/teachers-form.component';
 import { ClassesFormComponent } from './modules/classes/classes-form/classes-form.component';
@@ -13,6 +14,10 @@ import { CoursesFormComponent } from './modules/courses/courses-form/courses-for
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent,
+  },
   // Courses
   {
     path: 'cursos',

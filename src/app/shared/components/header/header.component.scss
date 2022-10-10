@@ -1,18 +1,21 @@
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    i {
-        font-size: 3rem;
-        
-    }
-    h2 {
-        margin: 0;
-        margin-left: 1rem;
-        font-size: 2rem;
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        justify-content: center;
+        height: 5rem;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        i {
+            font-size: 3rem;
+            
+        }
+        h2 {
+            margin: 0;
+            margin-left: 1rem;
+            font-size: 2rem;
+        }
     }
 }
 

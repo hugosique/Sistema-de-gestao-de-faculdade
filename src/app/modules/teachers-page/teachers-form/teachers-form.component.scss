@@ -1,4 +1,4 @@
-.students-form-content {
+.teachers-form-content {
     margin: 1.5rem;
 
     .card-content {
@@ -10,10 +10,10 @@
         }
     }
 
-    .classes-form {
+    .teachers-form {
         display: flex;
         flex-direction: column;
-        .classes-form_row {
+        .teachers-form_row {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -68,10 +68,10 @@
 }
 
 @media(max-width: 1022px ) {
-    .classes-form-content {
+    .teachers-form-content {
         min-width: 20rem !important;
     }
-    .classes-form_row {
+    .teachers-form_row {
         flex-direction: column !important;
         .field {
             width: 70% !important;
